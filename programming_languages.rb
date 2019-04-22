@@ -18,11 +18,14 @@ def reformat_languages(languages)
     style_data.each do |language, language_data|
       if new_hash[language]
         new_hash[language][:style] << style
+         #if the language already exists, then push into existing array
       else
         new_hash[language] = language_data
         new_hash[language][:style] = [style]
+        #else it doesnt exist and we're creating it here
       end
     end
   end
+ 
   new_hash
 end
